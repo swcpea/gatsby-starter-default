@@ -72,7 +72,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div className={styles.textCenter}>
+    <div>
       <StaticImage
         src="../images/example.png"
         loading="eager"
@@ -85,7 +85,7 @@ const IndexPage = () => (
       <h1>
         Welcome to <b>SWCPEA!</b>
       </h1>
-      <p className={styles.intro}>
+      <p>
         ＜a href="https://reurl.cc/YXVRaL" target="_blank"＞＜/a＞
       </p>
       <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fswcpea%2Fvideos%2F736145370780727%2F&width=1920" width="1920" height="1080" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
