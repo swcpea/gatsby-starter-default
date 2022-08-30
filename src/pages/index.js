@@ -72,7 +72,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div>
+    <div className={styles.textCenter}>
       <StaticImage
         src="../images/example.png"
         loading="eager"
@@ -83,13 +83,39 @@ const IndexPage = () => (
         style={{ marginBottom: `var(--space-3)` }}
       />
       <h1>
-        Welcome to <b>SWCPEA!</b>
+        Welcome to <b>Gatsby!</b>
       </h1>
-      <p>
-        ＜a href="https://reurl.cc/YXVRaL" target="_blank"＞＜/a＞
+      <p className={styles.intro}>
+        <b>Example pages:</b>{" "}
+        {samplePageLinks.map((link, i) => (
+          <React.Fragment key={link.url}>
+            <Link to={link.url}>{link.text}</Link>
+            {i !== samplePageLinks.length - 1 && <> · </>}
+          </React.Fragment>
+        ))}
+        <br />
+        Edit <code>src/pages/index.js</code> to update this page.
       </p>
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fswcpea%2Fvideos%2F736145370780727%2F&width=1920" width="1920" height="1080" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
     </div>
+    <ul className={styles.list}>
+      {links.map(link => (
+        <li key={link.url} className={styles.listItem}>
+          <a
+            className={styles.listItemLink}
+            href={`${link.url}${utmParameters}`}
+          >
+            {link.text} ↗
+          </a>
+          <p className={styles.listItemDescription}>{link.description}</p>
+        </li>
+      ))}
+    </ul>
+    {moreLinks.map((link, i) => (
+      <React.Fragment key={link.url}>
+        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+        {i !== moreLinks.length - 1 && <> · </>}
+      </React.Fragment>
+    ))}
   </Layout>
 )
 
